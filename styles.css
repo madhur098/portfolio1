@@ -24,6 +24,7 @@
 a{
     text-decoration: none;
     color: #000;
+    font-size: 18px;
 }
 
 body{
@@ -40,7 +41,7 @@ header{
     left: 0;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background: var(--gradient-white-bg);
     z-index: 100;
     transition: .3s;
@@ -134,7 +135,7 @@ ul.navlist{
 /* ==================== home section css code ============================ */
 section{
     padding: 30px 8%;
-    text-align: center;
+    font-size: 20px;
 }
 
 .home{
@@ -161,6 +162,7 @@ section{
 
 .hero-info h1{
     font-size: 3.5rem;
+ 
 }
 
 .text-animate{
@@ -169,8 +171,8 @@ section{
 }
 
 .text-animate h2{
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 500;
     margin-bottom: 1rem;
     color: transparent;
     background: var(--gradient-color-bg);
@@ -207,7 +209,8 @@ section{
     justify-content: space-between;
     width: 320px;
     margin-top: 2rem;
-    margin-bottom: 6rem;
+    margin-bottom: 20px;
+    gap:30px;
 }
 
 .btn-box .btn{
@@ -277,7 +280,6 @@ section{
 
 .img-hero{
     position: relative;
-    animation: floatImage 4s ease-in-out infinite;
     animation-delay: 3s;
 }
 
@@ -392,8 +394,8 @@ section{
 }
 
 .about-content p{
-    color: var(--font-color);
-    text-align: left;
+    font-size: 15px;
+    text-align: justify;
 }
 
 .text-box p{
@@ -442,6 +444,17 @@ section{
     margin-top: 1.5rem;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* ==================== Services section css code ============================ */
 .services{
     position: relative;
@@ -455,6 +468,7 @@ section{
 
 .main-text .heading{
     color: var(--main-color);
+    font-size: 28px;
 }
 
 .main-text span{
@@ -521,6 +535,7 @@ section{
 
 .servicesItem h3{
     margin: 1rem 0 0.5rem;
+    font-size: 20px;
 }
 
 .servicesItem p{
@@ -623,220 +638,219 @@ section{
 }
 
 
-
-
-
-
-
-
-/* Timeline styling */
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 20px auto; /* Added top margin for breathing room */
-    padding: 0 20px; /* Added side padding for smaller screens */
+/* ==================== Services section css code ============================ */
+.fillter-buttons{
+    text-align: center;
+    padding: .5rem;
+    margin-bottom: 2rem;
 }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ddd; /* Changed for better visibility */
+.fillter-buttons button{
+    background: var(--gradient-white-bg2);
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    color: #000;
+    box-shadow: rgba(60,64,67,0.3)0px 1px 2px 0,
+    rgba(60,64,67,0.15)0px 2px 6px 2px;
+    margin-right: .5rem;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
-/* Container for each timeline item */
-.container {
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-    padding: 20px;
+.fillter-buttons button:hover,button.mixitup-control-active{
+    background: var(--gradient-color-bg);
+    color: #fff;
 }
 
-.container.left {
-    left: 0;
+.portfolio-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(370px , 1fr));
+    gap: 1rem;
 }
 
-.container.right {
-    left: 50%;
+.portfolio-img img{
+    display: block;
+    width: 100%;
+    height: 160px;
+    transition: .3s;
 }
 
-/* The content inside the container */
-.content {
-    padding: 20px 30px;
-    background-color: #3db9b361;
-    border-radius: 6px;
-    text-align: left;
-    position: relative;
-    border: 1px solid #ddd; /* Added a subtle border for clarity */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-
-/* Connector circle */
-/* Connector circle */
-/*.container::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border: 3px solid #3db9b3;
-    border-radius: 50%;
-    top: 15px; /* Align with content */
-    /*left: 50%; /* Center on timeline */
-    /*transform: translateX(-50%); /* Precise centering */
-    /*z-index: 1;
-}*/
-
-
-
-
-/* Left and Right Containers */
-.container.left::before {
-    left: 100px; /* Always centered for left container */
-}
-
-.container.right::before {
-    left: 0%; /* Always centered for right container */
-}
-
-/* Logo styling */
-.logo {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.logo img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #FF9F55;
-}
-
-/* Mobile Optimization */
-@media screen and (max-width: 768px) {
-    .timeline {
-        flex-direction: row; /* Ensure timeline items are in a single row */
-        justify-content: space-between; /* Distribute containers evenly */
-        padding: 0 10px; /* Adjust padding for mobile */
-    }
-
-    .container {
-        width: 33%; /* Set equal width for all containers */
-        padding-left: 10px; /* Adjust padding to avoid overlap */
-        margin: 0 5px; /* Slight margin between containers */
-        box-sizing: border-box; /* Ensure padding is inside the container */
-    }
-
-    .content h2, .content h3, .content h4 {
-        font-size: 1.2rem; /* Reduce heading size for smaller screens */
-    }
-
-    .content p {
-        font-size: 0.9rem; /* Reduce paragraph text size for readability */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .timeline {
-        flex-direction: row; /* Keep in one row on smaller screens */
-        justify-content: space-evenly; /* Evenly distribute containers */
-    }
-
-    .container {
-        width: 50%; /* Ensure equal width for all containers */
-        padding-left: 10px; /* Maintain padding */
-        margin: 0 5px; /* Adjust margin for smaller viewports */
-    }
-
-    .content h2, .content h3, .content h4 {
-        font-size: 1rem; /* Further reduce heading size for very small screens */
-    }
-
-    .content p {
-        font-size: 0.8rem; /* Reduce paragraph text size even further */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==================== Contact section css code ============================ */
-
-.contactSkills{
+.portfolio-box{
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem;
+    box-shadow: rgba(0,0,0,0.18)0px 2px 4px;
+    background: var(--gradient-white-bg2);
+    border-radius: 10px;
+    transition: all .3s ease;
 }
 
-.contact-info,.skills{
+.portfolio-content{
     width: 100%;
+    padding-left: .5rem;
+    padding-bottom: .5rem;
+}
+
+.portfolio-img{
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.portfolio-box:hover img{
+    transform: scale(1.1);
+}
+
+.portfolio-content a.readMore{
+    padding: 8px 12px;
+    font-size: .8rem;
+}
+
+.portfolio-content p{
+    font-size: .9rem;
+    color: var(--font-color);
+    margin: .5rem 0 1rem 0;
+}
+
+
+/* ==================== Blog section css code ============================ */
+
+.blog-box{
+    padding: .5rem !important;
+}
+
+.blog{
+    position: relative;
+}
+
+.cards{
+    padding: 1rem .1rem;
+}
+
+.card{
     background: var(--gradient-white-bg2);
     box-shadow: rgba(0,0,0,0.18)0px 2px 4px;
     padding: 1rem;
     border-radius: 10px;
 }
 
+.card-top{
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
 
-.contact-info input,
-.contact-info form textarea{
+.card img{
     width: 100%;
-}
-
-.contact-info form input,
-.contact-info form textarea{
-    /* width: 100%; */
-    padding: .8rem;
-    border: 2px solid #e8e1e1;
-    margin: .5rem 0;
-    background: #e8f1f9;
-    border-radius: 5px;
-    outline: none;
+    height: 100%;
+    object-fit: cover;
     transition: .3s;
+    display: block;
 }
 
-.contact-info form .input-box{
-    display: flex;
-    justify-content: space-between;
+.card:hover img{
+    transform: scale(1.1);
 }
 
-.input-box input{
-    width: 49%;
+.card-info{
+    padding-bottom: .5rem;
 }
 
-form input:focus,form textarea:focus{
-    filter: brightness(100%);
-    background: #d2e9ff;
-    border: 2px solid #f8caca;
+.card-info h2{
+    font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
-form textarea{
-    resize: none;
+.data{
+    display: block;
+    margin: .2rem 0;
 }
 
-form .btn{
-    padding: 15px 20px;
-    cursor: pointer;
-    border: none;
+.card .excerpt{
+    color: var(--font-color);
+    margin-bottom: 1.5rem;
 }
+
+.swiper-pagination{
+    position: relative !important;
+    margin-top: 3rem;
+}
+
+.swiper-pagination-bullet{
+    height: 10px !important;
+    width: 30px !important;
+    border-radius: 25px !important;
+    background: var(--gradient-color-bg) !important;
+}
+
+.blog .showcase img{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+}
+
+.blog .showcase .circle{
+    filter: blur(3px);
+}
+
+.blog .showcase .ring{
+    top: 0;
+    left: -1%;
+}
+
+.blog .showcase .half-ring{
+    top: 10%;
+    right: 10%;
+}
+
+.blog .showcase .second-circle{
+    top: 30%;
+    left: 2%;
+    filter: blur(1px);
+}
+
+
+/* ==================== Contact section css code ============================ */
+
+.skills {
+    display: grid; /* Enables Grid Layout */
+    grid-template-columns: repeat(2, 1fr); /* 4 equal columns */
+    gap: 30px; /* Adds space between boxes */
+    padding: 20px; /* Optional padding around the grid */
+    justify-content: center; /* Centers the grid horizontally */
+    align-items: center; /* Centers content vertically within cells */
+}
+
+.skill {
+    background: #4CAF50; /* Box background color */
+    color: #fff; /* Text color */
+    padding: 10px 15px; /* Padding for content */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Centers text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    font-size: 18px; /* Font size */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+@media (max-width: 768px) {
+    .skills {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .skills {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
+    }
+}
+
 
 /* ==================== Skills section css code ============================ */
 
-.skillBox{
+/*.skillBox{
     padding: 0 1rem 1rem;
 }
 
@@ -914,46 +928,255 @@ h2.counter span{
 .sk-title{
     font-size: 1rem;
     font-weight: 500;
-}
+}*/
 
-/*======================= footer ============================ */
-footer{
+
+
+.timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+  }
+
+
+  .h1{
     text-align: center;
-    margin: 0 8%;
-    padding: 2rem 0;
-    border-top: 2px solid #e8e1e1;
-}
+    text-decoration: var(--main-color);
 
-
-#progress{
-    position: fixed;
-    /* background: #194eb9; */
-    z-index: 1000;
-    bottom: 60px;
-    right: 10px;
+  }
+  .timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #070101;
+    left: 50%;
+    margin-left: -1.5px;
+  }
+  .timeline > li {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .timeline > li:before,
+  .timeline > li:after {
+    content: " ";
+    display: table;
+  }
+  .timeline > li:after {
+    clear: both;
+  }
+  .timeline > li:before,
+  .timeline > li:after {
+    content: " ";
+    display: table;
+  }
+  .timeline > li:after {
+    clear: both;
+  }
+  .timeline > li > .timeline-panel {
+    width: 42%;
+    float: left;
+    border: 1px solid #5a0707;
+    border-radius: 2px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  }
+  .timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #a62626;
+    border-right: 0 solid #d01717;
+    border-bottom: 15px solid transparent;
+    content: " ";
+    
+  }
+  .timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #100303;
+    border-right: 0 solid #37cb90;
+    border-bottom: 14px solid transparent;
+    content: " ";
+  }
+  .timeline > li > .timeline-badge {
+    color: #891b1b;
     width: 50px;
     height: 50px;
-    display: none;
-    place-items: center;
-    border-radius: 50%;
-    color: #1d002c;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #fff;
+    z-index: 100;
+
+  }
+
+
+  .timeline-icon {
+    width: 80%; /* Icon width */
+    height: 40px; /* Icon height */
+    object-fit: contain; /* Ensures the image fits without distortion */
+    border-radius: 80%; /* Optional: rounds the icon itself */
+}
+
+
+  .timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+  }
+  .timeline-badge.primary {
+    background-color: #fff !important;
+  }
+  .timeline-badge.success {
+    background-color: #fff !important;
+  }
+  .timeline-badge.warning {
+    background-color: #fff !important;
+  }
+  .timeline-badge.danger {
+    background-color: #fff !important;
+  }
+  .timeline-badge.info {
+    background-color: #fff !important;
+  }
+  .timeline-title {
+    margin-top: 0;
+    color: inherit;
+    font-size: 18px;
+  }
+  .timeline-body > p,
+  .timeline-body > ul {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+  .timeline-body > p + p {
+    margin-top: 5px;
+    font-size:20px; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*======================= footer ============================ */
+/* Section styling */
+.down-box {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.contactSkills {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.contact-info .main-text {
+    margin-bottom: 20px;
+}
+
+.contact-info h2.heading {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info span {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-box {
+    display: flex;
+    gap: 10px;
+}
+
+.input-box input,
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.formBtn {
+    text-align: right;
+}
+
+.formBtn .btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    box-shadow: rgba(50,50,93,0.25)0px 50px 100px -20px,
-    rgba(0,0,0,0.3)0px 30px 60px -30px,
-    rgba(10,37,64,0.35)0px -2px 6px 0px inset;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.formBtn .btn:hover {
+    background: #45a049;
 }
 
 
-#progress-value{
-    display: grid;
-    height: calc(100% - 12px);
-    width: calc(100% - 12px);
-    background: var(--gradient-color-bg);
-    border-radius: 50%;
-    color: #fff;
-    place-items: center;
-    font-size: 25px;
-}
 
 
 
@@ -1050,7 +1273,6 @@ footer{
 @media(max-width:991px){
     header,section,footer{
         padding-left: 3%;
-        padding-right: 3%;
     }
     .home,.portfolio-box{
         flex-direction: column-reverse;
@@ -1149,7 +1371,7 @@ footer{
         width: 100%;
     }
     .text-animate{
-        width: 23.8rem;
+        width: 28.8rem;
     }
     .btn-box{
         width: 266px;

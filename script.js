@@ -185,3 +185,38 @@ ScrollReveal().reveal('.about-img,.fillter-buttons,.contact-info', { origin: "le
 ScrollReveal().reveal('.about-content,.skills', { origin: "right" });
 ScrollReveal().reveal('.allServices,.portfolio-gallery,.blog-box,footer,.img-hero', { origin: "bottom" });
 
+
+
+ // Select the progress button
+const progressButton = document.getElementById('progress');
+
+// Show the button only when scrolling down
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Show button after 300px of scrolling
+        progressButton.style.display = 'flex';
+    } else {
+        progressButton.style.display = 'none';
+    }
+});
+
+// Scroll to the top when the button is clicked
+progressButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+
+
+function sendEmail() {
+    const firstName = encodeURIComponent(document.getElementById('firstName').value);
+    const lastName = encodeURIComponent(document.getElementById('lastName').value);
+    const email = encodeURIComponent(document.getElementById('email').value);
+    const subject = encodeURIComponent(document.getElementById('subject').value);
+    const message = encodeURIComponent(document.getElementById('message').value);
+
+    const mailtoLink = `mailto:madhurchandhak098@gmail.com.com?subject=${subject}&body=First Name: ${firstName}%0D%0ALast Name: ${lastName}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+    
+    window.location.href = mailtoLink;
+}
